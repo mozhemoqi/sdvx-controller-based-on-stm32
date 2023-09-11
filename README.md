@@ -142,86 +142,8 @@ USBD_HID_SendReport(&hUsbDeviceFS,hidkey_buffer,10);
 ## 轮询过程  
 ![Image](https://user-images.githubusercontent.com/105113020/267012185-d86e692c-d4f6-426b-8f1d-c20549f0e46e.png)  
 **通过定时1ms在主循环执行发送过程**  
-void send(void)  
-{   		
-    tick=HAL_GetTick();   
-      if (tick - my_tick > 0)    
-      {
-       my_tick=tick;
-      if (BT_A.FLAG==1)       hidkey_buffer[3]=0x04; //A
-      else                    hidkey_buffer[3]=0x00;
-      
-      if(BT_B.FLAG==1)        hidkey_buffer[4]=0x05;//B
-      else                    hidkey_buffer[4]=0x00;
-
-      if(BT_C.FLAG==1)        hidkey_buffer[5]=0x06;//C
-      else                    hidkey_buffer[5]=0x00;
-
-      if(BT_D.FLAG==1)        hidkey_buffer[6]=0x07;//D
-      else                    hidkey_buffer[6]=0x00;
-
-      if(FX_L.FLAG==1)        hidkey_buffer[7]=0x08;//E
-      else                    hidkey_buffer[7]=0x00;
-
-      if(FX_R.FLAG==1)        hidkey_buffer[8]=0x09;//F
-      else                    hidkey_buffer[8]=0x00;
-
-      if(START.FLAG==1)       hidkey_buffer[9]=0x0A;//G
-      else                    hidkey_buffer[9]=0x00;
-
-
-      if (BT_A.Last_FLAG==0 && BT_A.FLAG==1)                BT_A.Send_FLAG=1;
-	   else if  (BT_A.Last_FLAG==1 && BT_A.FLAG==0)           BT_A.Send_FLAG=1;
-   else                                                     BT_A.Send_FLAG=0;  
-
-      if (BT_B.Last_FLAG==0 && BT_B.FLAG==1)                BT_B.Send_FLAG=1;
-      else if  (BT_B.Last_FLAG==1 && BT_B.FLAG==0)          BT_B.Send_FLAG=1;
-      else                                                  BT_B.Send_FLAG=0;
-
-      if (BT_C.Last_FLAG==0 && BT_C.FLAG==1)                BT_C.Send_FLAG=1;
-   else if  (BT_C.Last_FLAG==1 && BT_C.FLAG==0)             BT_C.Send_FLAG=1;
-      else                                                  BT_C.Send_FLAG=0;
-
-      if (BT_D.Last_FLAG==0 && BT_D.FLAG==1)                BT_D.Send_FLAG=1;
-      else if  (BT_D.Last_FLAG==1 && BT_D.FLAG==0)          BT_D.Send_FLAG=1;
-      else                                                  BT_D.Send_FLAG=0;
-      	
-      if (FX_L.Last_FLAG==0 && FX_L.FLAG==1)                FX_L.Send_FLAG=1;
-      else if  (FX_L.Last_FLAG==1 && FX_L.FLAG==0)          FX_L.Send_FLAG=1;
-      else                                                  FX_L.Send_FLAG=0;
-       
-      if (FX_R.Last_FLAG==0 && FX_R.FLAG==1)                FX_R.Send_FLAG=1;
-      else if  (FX_R.Last_FLAG==1 && FX_R.FLAG==0)          FX_R.Send_FLAG=1;
-      else                                                  FX_R.Send_FLAG=0;
-
-      if (START.Last_FLAG==0 && START.FLAG==1)              START.Send_FLAG=1;
-      else if  (START.Last_FLAG==1 && START.FLAG==0)        START.Send_FLAG=1;
-      else                                                  START.Send_FLAG=0;
-
-
-       if( BT_A.Send_FLAG ||
-           BT_B.Send_FLAG ||
-           BT_C.Send_FLAG ||
-           BT_D.Send_FLAG ||
-           FX_L.Send_FLAG ||
-           FX_R.Send_FLAG ||
-           START.Send_FLAG != 0)USBD_HID_SendReport(&hUsbDeviceFS,hidkey_buffer,10);
-      if (VOL_L.FLAG!=0 || VOL_R.FLAG!=0)
-      {
-         USBD_HID_SendReport(&hUsbDeviceFS,hidmouse_buffer,3);
-      }
-      
-	BT_A.Last_FLAG=BT_A.FLAG;
-	BT_B.Last_FLAG=BT_B.FLAG;
-	BT_C.Last_FLAG=BT_C.FLAG;
-	BT_D.Last_FLAG=BT_D.FLAG;
-	FX_L.Last_FLAG=FX_L.FLAG;
-	FX_R.Last_FLAG=FX_R.FLAG;
-	START.Last_FLAG=START.FLAG;
-     
-     }
-
-}
+![image](https://github.com/mozhemoqi/Sdvx-controller-based-on-stm32/assets/105113020/8f7573a5-b40e-4e3a-bf98-e5f9b9ead332)
+![image](https://github.com/mozhemoqi/Sdvx-controller-based-on-stm32/assets/105113020/8b75e11c-97c1-44ac-8f16-66702a975565)
 # 五.CAD前面板
 ![Image](https://user-images.githubusercontent.com/105113020/267015096-b15d80ae-9837-4a34-8b0c-5eb7f599e57d.png)
 **推荐切割5mm厚的亚克力板**
