@@ -143,10 +143,10 @@ USBD_HID_SendReport(&hUsbDeviceFS,hidkey_buffer,10);
 ![Image](https://user-images.githubusercontent.com/105113020/267012185-d86e692c-d4f6-426b-8f1d-c20549f0e46e.png)  
 **通过定时1ms在主循环执行发送过程**  
 void send(void)  
-{  		
-	 tick=HAL_GetTick();  
-     if (tick - my_tick > 0)  
-     {
+{   		
+    tick=HAL_GetTick();   
+      if (tick - my_tick > 0)    
+      {
        my_tick=tick;
       if (BT_A.FLAG==1)       hidkey_buffer[3]=0x04; //A
       else                    hidkey_buffer[3]=0x00;
