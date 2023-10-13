@@ -34,10 +34,7 @@ PB10 START
 使用stlink 或者jlink，打开工程文件(提前提前安装好mdk-arm)，选择调试设备并勾选调试模式为swd，swdio与swdclk对应引脚连接。  
 也可以烧录hex文件，准备ch340，改为bootloader启动，使用isp烧录。  
 下载整个压缩包即可，代码烧录部分可以百度stm32f103代码烧录方法，文件工程在压缩文件中，代码烧录完成后可以将端子的两个引脚短接一下看看电脑输入法是否有相应的反应，旋钮引脚由于悬空的原因，在未连线的情况下鼠标可能会乱跳属于正常现象，连接后即可正常使用，代码烧录完成基本就大功告成。
-
-![Uploading 01d4d7f3ae096cdf7ea325e819c38124.jpeg…]()
-
-
+![image](https://github.com/mozhemoqi/sdvx-controller-based-on-stm32/assets/105113020/5d954a20-3bc7-4674-b702-8b4f821df375)
 
 **建议使用pcb中的核心板版本，不容易出问题方便焊接** 
 
