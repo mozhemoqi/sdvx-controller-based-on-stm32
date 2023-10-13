@@ -150,3 +150,5 @@ USBD_HID_SendReport(&hUsbDeviceFS,hidkey_buffer,10);
 # 六.pcb  
 ![Image](https://user-images.githubusercontent.com/105113020/267015551-ba7941a9-583d-4637-9eab-c8e92844c5b2.png)  
 **仅方便连接，使用立创白嫖既可，板子双面铺铜铺铜间距较短，注意焊接时不要烫坏阻焊导致引脚与gnd接触**  
+![image](https://github.com/mozhemoqi/sdvx-controller-based-on-stm32/assets/105113020/734d7f1e-f461-4a05-b9c8-9fcb2d891dc1)
+**此版本可用于diy或者自行增加其他外设或者功能，大部分引脚完全引出，rtc的32.768晶振可以不焊** 
