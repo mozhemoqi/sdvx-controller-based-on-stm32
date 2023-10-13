@@ -33,6 +33,13 @@ PB1 FX-R
 PB10 START  
 使用stlink 或者jlink，打开工程文件(提前提前安装好mdk-arm)，选择调试设备并勾选调试模式为swd，swdio与swdclk对应引脚连接。  
 也可以烧录hex文件，准备ch340，改为bootloader启动，使用isp烧录。  
+下载整个压缩包即可，代码烧录部分可以百度stm32f103代码烧录方法，文件工程在压缩文件中，代码烧录完成后可以将端子的两个引脚短接一下看看电脑输入法是否有相应的反应，旋钮引脚由于悬空的原因，在未连线的情况下鼠标可能会乱跳属于正常现象，连接后即可正常使用，代码烧录完成基本就大功告成。
+![Uploading 01d4d7f3ae096cdf7ea325e819c38124.jpeg…]()
+
+
+
+**建议使用pcb中的核心板版本，不容易出问题方便焊接** 
+
 # 四.代码部分实现原理  
 ## 1.hid通信相关  
 ### 设备描述   
@@ -149,6 +156,6 @@ USBD_HID_SendReport(&hUsbDeviceFS,hidkey_buffer,10);
 **推荐切割5mm厚的亚克力板**
 # 六.pcb  
 ![Image](https://user-images.githubusercontent.com/105113020/267015551-ba7941a9-583d-4637-9eab-c8e92844c5b2.png)  
-**仅方便连接，使用立创白嫖既可，板子双面铺铜铺铜间距较短，注意焊接时不要烫坏阻焊导致引脚与gnd接触**  
+**核心板版本，仅方便连接，使用立创白嫖既可，板子双面铺铜铺铜间距较短，注意焊接时不要烫坏阻焊导致引脚与gnd接触**  
 ![image](https://github.com/mozhemoqi/sdvx-controller-based-on-stm32/assets/105113020/734d7f1e-f461-4a05-b9c8-9fcb2d891dc1)
 **此版本可用于diy或者自行增加其他外设或者功能，大部分引脚完全引出，rtc的32.768晶振可以不焊** 
