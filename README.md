@@ -1,6 +1,6 @@
 # Sdvx controller 
 
-# 二.材料清单
+# 材料清单
 1.购买stm32f103c8t6最小核心板 
 2.购买烧录工具如 stlink（推荐），jlink        
 3.360ppr的编码器或者其他线数的编码器 两个 
@@ -11,7 +11,7 @@
 8.切割亚克力面板 
 9.购买木盒。
 预估成本
-# 三.代码烧录以及接线顺序  
+# 代码烧录以及接线顺序  
 下载解压压缩包  
 ![Image](https://user-images.githubusercontent.com/105113020/266985680-279d3b45-5d15-4137-8ac3-d55ff37bda7d.png)   
 引脚对应  
